@@ -3,8 +3,8 @@
 ## install basic tools, grouped line by line
 ### apt 更新可用软件包列表 &&  通过 卸载/安装/升级 来更新系统 && 卸载所有自动安装且不再使用的软件包
 sudo apt update && sudo apt upgrade -y && sudo apt autoremove
-### 安装 ssh git vim zsh tmux docker tree
-sudo apt install -y ssh git vim zsh tmux docker.io tree autojump
+### 安装 ssh vim tmux docker tree
+sudo apt install -y ssh vim tmux docker.io tree autojump
 ### 安装java
 sudo apt install -y openjdk-8-jdk
 ### install Maven

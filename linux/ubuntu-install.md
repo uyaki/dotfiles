@@ -5,9 +5,9 @@ ssh -o ServerAliveInterval=180 -o ServerAliveCountMax=3 -o KeepAlive=yes [user]@
 ssh-keygen -R [ip]
 ```
 
-## 安装git
+## 安装git、zsh
 ```sh
-sudo apt install -y git
+sudo apt install -y git zsh
 ```
 ## 安装zsh
 ```sh
