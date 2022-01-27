@@ -12,12 +12,12 @@ sudo apt install -y git zsh
 ## 安装zsh
 ```sh
 ### install `oh-my-zsh`
-sh -c "$(wget -O- https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+sudo sh -c "$(wget -O- https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 ```
 
 ## clone project
 ```sh
-git clone https://github.com/uyaki/dotfiles.git /home/uyaki/dotfiles
+sudo git clone https://github.com/uyaki/dotfiles.git /home/uyaki/dotfiles
 ```
 
 > 文件默认操作路径 `/home/uyaki/dotfiles`
