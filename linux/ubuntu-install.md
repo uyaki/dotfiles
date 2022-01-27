@@ -17,13 +17,13 @@ sudo sh -c "$(wget -O- https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/
 
 ## clone project
 ```sh
-sudo git clone https://github.com/uyaki/dotfiles.git /home/uyaki/dotfiles
+sudo git clone https://github.com/uyaki/dotfiles.git /home/ubuntu/dotfiles
 ```
 
-> 文件默认操作路径 `/home/uyaki/dotfiles`
+> 文件默认操作路径 `/home/ubuntu/dotfiles`
 
 ```
-cd /home/uyaki/dotfiles
+cd /home/ubuntu/dotfiles
 sudo chmod 777 ./linux/*-install.sh
 ./linux/ubuntu-install.sh
 ```
