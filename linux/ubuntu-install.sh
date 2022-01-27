@@ -20,3 +20,7 @@ git clone https://github.com/zsh-users/zsh-completions ${ZSH_CUSTOM:=~/.oh-my-zs
 git clone https://github.com/zsh-users/zsh-autosuggestions.git $ZSH_CUSTOM/plugins/zsh-autosuggestions
 git clone https://github.com/zsh-users/zsh-syntax-highlighting.git $ZSH_CUSTOM/plugins/zsh-syntax-highlighting
 ### 创建软链接
+ln -s ./../zsh/zshrc-linux.conf ~/.zshrc
+ln -s ./../zsh/.p10k.zsh ~/.p10k.zsh
+### 激活配置
+source ~/.zshrc
