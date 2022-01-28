@@ -16,6 +16,7 @@ sudo tar xf /tmp/apache-maven-*.tar.gz -C /opt
 sudo ln -s /opt/apache-maven-3.8.4 /opt/maven
 
 ## install `oh-my-zsh`
+sh -c "$(wget https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh -O -)"
 ### 备份原始配置文件
 sudo mv ~/.zshrc ~/.zshrc_old
 ### 下载主题

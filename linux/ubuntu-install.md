@@ -42,3 +42,16 @@ cd dotfiles
 sudo chmod 777 ./linux/*-install.sh
 ./linux/ubuntu-install.sh
 ```
+
+## powerlevel10k主题需要在客户端安装字体
+
+> 使用主题[powerlevel10k](https://github.com/romkatv/powerlevel10k)，需要在客户端下载字体 [hack-nerd-font](https://github.com/ryanoasis/nerd-fonts)
+
+下面附上mac下载方式，其他系统请参照 [hack-nerd-font](https://github.com/ryanoasis/nerd-fonts)
+
+```bash
+brew tap homebrew/cask-fonts
+brew install --cask font-hack-nerd-font
+```
+
+- `iTerm -> Preferences -> Profiles -> Text -> font` -> 修改成 Hack Nerd Font
