@@ -19,7 +19,7 @@ sudo chmod +x /usr/local/bin/docker-compose
 sudo ln -s /usr/local/bin/docker-compose /usr/bin/docker-compose
 
 ## install `oh-my-zsh`
-sh -c "$(wget https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh -O -)"
+sudo sh -c "$(wget https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh -O -)"
 
 ### 备份原始配置文件
 sudo mv ~/.zshrc ~/.zshrc_old
@@ -30,7 +30,8 @@ sudo git clone https://github.com/zsh-users/zsh-syntax-highlighting.git $ZSH_CUS
 
 ### 按需下载主题(需要配合客户端字体使用，达到最佳效果，见  linux/ubuntu-install.md)
 sudo git clone https://github.com/romkatv/powerlevel10k.git $ZSH_CUSTOM/themes/powerlevel10k
-### 创建软链接
+
+### 创建软链接，注意是否需要安装主题powerlevel10k
 sudo ln -s ~/dotfiles/zsh/zshrc-linux.conf ~/.zshrc
 ### powerlevel10k配置文件，如果不需要这个主题，去掉zshrc-linux.conf 前7行和最后2行
 sudo ln -s ~/dotfiles/zsh/.p10k.zsh ~/.p10k.zsh
