@@ -27,7 +27,7 @@ tmux
 
 ### 面板Pane和窗口window和会话session
 
-![](../img/tmux-pane-window.png)
+![](./img/tmux-pane-window.png)
 
 如图所示，一个工作区域叫做 Pane。
 

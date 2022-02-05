@@ -81,7 +81,7 @@ wsl --install -d  Ubuntu
 ## 可以使用 wsl -l -v 查看是否需要更换wsl2 这可能是因为你在升级wsl2之前就已经安装了子系统
 wsl --set-version Ubuntu 2
 ```
-![wsl-l-v](./img/wsl-l-v.png))
+![wsl-l-v](./img/wsl-l-v.png)
 
 ### 步骤5 登录退出
 
