@@ -8,6 +8,7 @@
     - [步骤4 选择并安装linux](#步骤4-选择并安装linux)
     - [步骤5 登录退出](#步骤5-登录退出)
   - [OpenSSL](#openssl)
+  - [windows Terminal](#windows-terminal)
 
 ## 安裝wsl
 
@@ -95,5 +96,9 @@ wsl
 ---
 
 ## OpenSSL
+
+TODO
+
+## windows Terminal
 
 TODO
