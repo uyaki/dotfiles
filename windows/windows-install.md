@@ -14,16 +14,18 @@
 
 ### 步骤1 打开windows的wsl功能。
 
-具体操作路径：`控制面板` -> `所有控制面板项` -> `程序和功能` -> `启用或关闭Windows功能` -> 勾选✔️`适用于Linux的Windows子系统。`
-
-![](img/wsl.png)
-
-当然，更建议用命令行的方式操作:
-
+- 方式一：使用命令行（推荐）
+  
 以管理员身份打开 PowerShell（`“开始”菜单` -> `PowerShell` -> `单击右键` -> `以管理员身份运行`）并运行：
 ```sh
 dism.exe /online /enable-feature /featurename:Microsoft-Windows-Subsystem-Linux /all /norestart
 ```
+
+- 方式二：使用图形界面
+
+具体操作路径：`控制面板` -> `所有控制面板项` -> `程序和功能` -> `启用或关闭Windows功能` -> 勾选✔️`适用于Linux的Windows子系统。`
+
+![](img/wsl.png)
 
 ### 步骤2 启用虚拟机功能
 
