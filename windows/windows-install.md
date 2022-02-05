@@ -89,7 +89,7 @@ wsl --set-version Ubuntu 2
 wsl
 ```
 
-![wsl-lo](./img/wsl-lo.png))
+![wsl-lo](./img/wsl-lo.png)
 
 之后的操作见 [ubuntu-install.md](../linux/ubuntu-install.md)
 
