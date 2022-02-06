@@ -1,6 +1,7 @@
 # windows 安装说明
 
 - [windows 安装说明](#windows-安装说明)
+  - [winget 安装](#winget-安装)
   - [安裝wsl](#安裝wsl)
     - [步骤1 打开windows的wsl功能。](#步骤1-打开windows的wsl功能)
     - [步骤2 启用虚拟机功能](#步骤2-启用虚拟机功能)
@@ -9,6 +10,26 @@
     - [步骤5 登录退出](#步骤5-登录退出)
   - [OpenSSL](#openssl)
   - [windows Terminal](#windows-terminal)
+    - [下载字体Meslo](#下载字体meslo)
+
+--- 
+
+## winget 安装
+
+请到[winget官方github](https://github.com/microsoft/winget-cli/releases)查看最新可下载版本
+
+```sh
+## 下载
+curl.exe -L -o $HOME/Downloads/winget.msixbundle https://github.com/microsoft/winget-cli/releases/download/v1.2.10271/Microsoft.DesktopAppInstaller_8wekyb3d8bbwe.msixbundle
+
+## 安装winget
+msiexec winget.msixbundle
+
+## 查看版本
+winget -v
+```
+
+---
 
 ## 安裝wsl
 
@@ -101,6 +122,27 @@ wsl
 
 TODO
 
+---
+
 ## windows Terminal
 
-TODO
+### 下载字体Meslo
+
+```sh
+curl.exe -L -o $HOME/Downloads/nerd-fonts/Meslo.zip https://github.com/ryanoasis/nerd-fonts/releases/download/v2.1.0/Meslo.zip
+
+curl.exe -L -o $HOME/Downloads/nerd-fonts/install.ps1 https://raw.githubusercontent.com/ryanoasis/nerd-fonts/master/install.ps1
+
+wget --no-check-certificate -P $HOME/Downloads/nerd-fonts https://raw.githubusercontent.com/ryanoasis/nerd-fonts/master/install.ps1
+
+wget -P $HOME/Downloads/nerd-fonts 185.199.109.133/ryanoasis/nerd-fonts/master/install.ps1
+
+7z x $HOME/Downloads/nerd-fonts/Meslo.zip -oC:/Users/uyaki/Downloads/nerd-fonts/patched-fonts/Meslo
+
+./install.ps1
+```
+
+> Could not resolve host: raw.githubusercontent.com
+> 通过https://www.ipaddress.com/查询真实地址，如185.199.108.133，
+> - 添加到/etc/hosts
+> - 或者临时使用路径185.199.108.133/ryanoasis/nerd-fonts/master/install.ps1下载
