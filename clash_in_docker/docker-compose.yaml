@@ -1,0 +1,23 @@
+version: '3'
+services:
+  clash:
+    # ghcr.io/dreamacro/clash
+    # ghcr.io/dreamacro/clash-premium
+    # dreamacro/clash
+    # dreamacro/clash-premium
+    image: dreamacro/clash
+    container_name: clash
+    volumes:
+      - ./config.yaml:/root/.config/clash/config.yaml
+      # - ./ui:/ui # dashboard volume
+    ports:
+      - "7890:7890" # http port
+      - "7891:7891" # socks5 port
+      - "9090:9090" # external controller (Restful API)
+    # # TUN
+    # cap_add:
+    #   - NET_ADMIN
+    # devices:
+    #   - /dev/net/tun
+    restart: unless-stopped
+    # network_mode: "bridge" # or "host" on Linux 或者直接注释掉这一行

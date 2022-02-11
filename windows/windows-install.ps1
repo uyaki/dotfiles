@@ -6,10 +6,27 @@ Set-ItemProperty -path HKCU:\Environment\ -Name Path -Value "$((Get-ItemProperty
 ## 安装wget
 winget install -e --id GnuWin32.Wget
 Set-ItemProperty -path HKCU:\Environment\ -Name Path -Value "$((Get-ItemProperty -path HKCU:\Environment\ -Name Path).Path);C:\Program Files (x86)\GnuWin32\bin"
+## 安装gvim
+winget install -e --id vim.vim
+Set-ItemProperty -path HKCU:\Environment\ -Name Path -Value "$((Get-ItemProperty -path HKCU:\Environment\ -Name Path).Path);C:\Program Files\Vim\vim82"
+## 安装neovim（可能需要开全局代理确保你能访问到https://get.scoop.sh） 默认路径 C:\tools\neovim\Neovim\bin
+choco install -y neovim
+Set-ItemProperty -path HKCU:\Environment\ -Name Path -Value "$((Get-ItemProperty -path HKCU:\Environment\ -Name Path).Path);C:\tools\neovim\Neovim\bin"
 
+## 安装pyenv , 默认目录 $HOME/.pyenv 会自动添加环境变量
+### 查看可安装版本 pyenv install -l
+### 安装一到多个版本 pyenv install 3.9.6 3.5.2 
+### 设置全局版本 pyenv global 3.9.6
+### 设置本地版本 pyenv local 3.9.6 每当从此文件夹中调用时，都将使用给定的版本。
+### 使用 pip（取消）安装任何库或修改版本文件夹中的文件后，必须运行以使用 python 和库的可执行文件的新填充码更新 pyenv。pyenv rehash
+### 查看正在使用 pyenv version
+### 查看所有版本 pyenv versions
+choco install -y pyenv-win
 
 ## 安装idea
 winget install -e --id JetBrains.IntelliJIDEA.Ultimate
+
+
 
 ## 安装 jdk
 

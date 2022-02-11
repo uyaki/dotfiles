@@ -2,6 +2,7 @@
 
 - [windows 安装说明](#windows-安装说明)
   - [winget 安装](#winget-安装)
+  - [chocolatey 安装](#chocolatey-安装)
   - [安裝wsl](#安裝wsl)
     - [步骤1 打开windows的wsl功能。](#步骤1-打开windows的wsl功能)
     - [步骤2 启用虚拟机功能](#步骤2-启用虚拟机功能)
@@ -27,6 +28,18 @@ msiexec winget.msixbundle
 
 ## 查看版本
 winget -v
+```
+
+---
+
+## chocolatey 安装
+
+> chocolatey [官网](https://chocolatey.org/install#individual)
+
+管理员身份运行powershell
+
+```sh
+Set-ExecutionPolicy Bypass -Scope Process -Force; [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072; iex ((New-Object System.Net.WebClient).DownloadString('https://community.chocolatey.org/install.ps1'))
 ```
 
 ---

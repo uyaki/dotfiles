@@ -6,10 +6,32 @@ sudo apt update && sudo apt upgrade -y
 
 ###  安装git zsh
 sudo apt install -y git zsh
+### git配置防止 GnuTLS recv error (-110)
+sudo apt install -y gnutls-bin
+git config --global http.sslVerify false
+git config --global http.postBuffer 1048576000
+git config --global user.name "Your Name"
+git config --global user.email "youremail@yourdomain.com"
+
 ### 安装 ssh vim tmux docker tree autojump
 sudo apt install -y ssh vim tmux tree autojump
+
 ### 安装java maven
 sudo apt install -y openjdk-8-jdk maven
+
+## 安装pyenv , 默认目录 $HOME/.pyenv 会自动添加环境变量
+### 查看可安装版本 pyenv install -l
+### 安装一到多个版本 pyenv install 3.9.6 3.5.2 
+### 设置全局版本 pyenv global 3.9.6
+### 设置本地版本 pyenv local 3.9.6 每当从此文件夹中调用时，都将使用给定的版本。
+### 使用 pip（取消）安装任何库或修改版本文件夹中的文件后，必须运行以使用 python 和库的可执行文件的新填充码更新 pyenv。pyenv rehash
+### 查看正在使用 pyenv version
+### 查看所有版本 pyenv versions
+### 安装相关依赖
+sudo apt install -y --no-install-recommends make build-essential libssl-dev zlib1g-dev libbz2-dev libreadline-dev libsqlite3-dev wget curl llvm libncurses5-dev xz-utils tk-dev libxml2-dev libxmlsec1-dev libffi-dev liblzma-dev
+### 安装pyenv
+git clone https://github.com/pyenv/pyenv.git ~/.pyenv
+
 
 ### docker
 sudo apt install -y docker.io
@@ -41,3 +63,4 @@ source ~/.zshrc
 
 # 非必要的：卸载所有自动安装且不再使用的软件包
 sudo apt autoremove
+

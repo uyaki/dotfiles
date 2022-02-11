@@ -5,6 +5,7 @@
   - [切换到管理员角色](#切换到管理员角色)
   - [Clone project](#clone-project)
   - [安装字体](#安装字体)
+  - [安装clash](#安装clash)
 
 ---
 
@@ -60,3 +61,7 @@ brew install --cask font-hack-nerd-font
 ```
 - iterm2 配置方式
   - `iTerm -> Preferences -> Profiles -> Text -> font` -> 修改成 Hack Nerd Font
+
+## 安装clash
+
+[clash in docker](./../clash_in_docker/clash_in_docker.md)
