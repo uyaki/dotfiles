@@ -15,9 +15,9 @@ Set-ItemProperty -path HKCU:\Environment\ -Name Path -Value "$((Get-ItemProperty
 
 ## 安装pyenv , 默认目录 $HOME/.pyenv 会自动添加环境变量
 ### 查看可安装版本 pyenv install -l
-### 安装一到多个版本 pyenv install 3.9.6 3.5.2 
-### 设置全局版本 pyenv global 3.9.6
-### 设置本地版本 pyenv local 3.9.6 每当从此文件夹中调用时，都将使用给定的版本。
+### 安装一到多个版本 pyenv install 3.9.10 3.5.2 
+### 设置全局版本 pyenv global 3.9.10
+### 设置本地版本 pyenv local 3.9.10 每当从此文件夹中调用时，都将使用给定的版本。
 ### 使用 pip（取消）安装任何库或修改版本文件夹中的文件后，必须运行以使用 python 和库的可执行文件的新填充码更新 pyenv。pyenv rehash
 ### 查看正在使用 pyenv version
 ### 查看所有版本 pyenv versions
