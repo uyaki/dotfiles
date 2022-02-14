@@ -86,7 +86,7 @@ $ docker-compose stop
 
 - 写入 `~/.zshrc`
 
-```conf
+```sh
 # 一键开启代理并显示当前ip
 proxy(){
   export https_proxy=http://127.0.0.1:7890

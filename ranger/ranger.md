@@ -44,7 +44,7 @@ $ pip install ranger-fm
 
 > 禁用默认配置
 
-```conf
+```sh
 export RANGER_LOAD_DEFAULT_RC=FALSE
 ```
 
@@ -60,7 +60,7 @@ $ pip install ueberzug
 
 修改配置文件`~/.config/ranger/rc.conf`
 
-```conf
+```sh
 set preview_images true
 set preview_images_method ueberzug
 set draw_borders true
