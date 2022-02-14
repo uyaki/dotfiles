@@ -141,21 +141,4 @@ TODO
 
 ### 下载字体Meslo
 
-```sh
-curl.exe -L -o $HOME/Downloads/nerd-fonts/Meslo.zip https://github.com/ryanoasis/nerd-fonts/releases/download/v2.1.0/Meslo.zip
-
-curl.exe -L -o $HOME/Downloads/nerd-fonts/install.ps1 https://raw.githubusercontent.com/ryanoasis/nerd-fonts/master/install.ps1
-
-wget --no-check-certificate -P $HOME/Downloads/nerd-fonts https://raw.githubusercontent.com/ryanoasis/nerd-fonts/master/install.ps1
-
-wget -P $HOME/Downloads/nerd-fonts 185.199.109.133/ryanoasis/nerd-fonts/master/install.ps1
-
-7z x $HOME/Downloads/nerd-fonts/Meslo.zip -oC:/Users/uyaki/Downloads/nerd-fonts/patched-fonts/Meslo
-
-./install.ps1
-```
-
-> Could not resolve host: raw.githubusercontent.com
-> 通过https://www.ipaddress.com/查询真实地址，如185.199.108.133，
-> - 添加到/etc/hosts
-> - 或者临时使用路径185.199.108.133/ryanoasis/nerd-fonts/master/install.ps1下载
+[字体字体安装教程](./../font/font.md)

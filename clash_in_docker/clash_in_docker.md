@@ -1,13 +1,21 @@
 # clash in docker
 
 - [clash in docker](#clash-in-docker)
-  - [docker-compose.yaml](#docker-composeyaml)
-  - [config.yaml](#configyaml)
-  - [启动与关闭clash](#启动与关闭clash)
-  - [终端配置http_proxy](#终端配置http_proxy)
-  - [网页控制](#网页控制)
+  - [配置文件](#配置文件)
+    - [docker-compose.yaml](#docker-composeyaml)
+    - [config.yaml](#configyaml)
+  - [使用](#使用)
+    - [启动与关闭clash](#启动与关闭clash)
+    - [终端配置http_proxy](#终端配置http_proxy)
+    - [网页控制](#网页控制)
 
-## docker-compose.yaml
+## 配置文件
+
+### docker-compose.yaml
+
+```sh
+cp clash_in_docker/docker-compose.yaml /opt/Clash/docker-compose.yaml
+```
 
 > 其他方式请看[官方文档](https://github.com/Dreamacro/clash/wiki/clash-as-a-daemon#docker)
 
@@ -37,13 +45,9 @@ services:
     # network_mode: "bridge" # or "host" on Linux 或者直接注释掉这一行
 ```
 
-## config.yaml
+### config.yaml
 
-> 文件的获取各凭本事 🤪
- 
-> 将 `config.yaml` 文件放在 `docker-compose.yaml` 文件同级目录下
-
-修改文件内容如下：
+1. 修改文件内容如下：
 
 ```yaml
 # http port
@@ -56,18 +60,31 @@ allow-lan: true
 external-controller: "0.0.0.0:9090"
 ```
 
+> 文件的获取各凭本事 🤪
+
 > 完整配置项请查阅[官方文档](https://github.com/Dreamacro/clash/wiki/configuration#introduction)
 
-## 启动与关闭clash
+
+2. 将 `config.yaml` 文件放在 `docker-compose.yaml` 文件同级目录下
+
+```sh
+scp config.yaml root@<ip>:/opt/Clash/config.yaml
+```
+ 
+--- 
+
+## 使用
+
+### 启动与关闭clash
 
 ```sh
 $ docker-compose up -d
 $ docker-compose stop
 ```
 
-## 终端配置http_proxy
+### 终端配置http_proxy
 
-可以写入 `~/.zshrc`，记得要`source ~/.zshrc`
+- 写入 `~/.zshrc`
 
 ```sh
 export https_proxy=http://127.0.0.1:7890
@@ -75,6 +92,12 @@ export http_proxy=http://127.0.0.1:7890
 export all_proxy=socks5://127.0.0.1:7891
 ```
 
-## 网页控制
+- 激活
 
-[http://clash.razord.top/#/proxies](http://clash.razord.top/#/proxies)
+```sh
+source ~/.zshrc
+```
+
+### 网页控制
+
+本地浏览器打开 [http://clash.razord.top/#/proxies](http://clash.razord.top/#/proxies)，输入ip、端口可以远程控制clash

@@ -19,20 +19,6 @@ sudo apt install -y ssh vim tmux tree autojump
 ### 安装java maven
 sudo apt install -y openjdk-8-jdk maven
 
-## 安装pyenv , 默认目录 $HOME/.pyenv 会自动添加环境变量
-### 查看可安装版本 pyenv install -l
-### 安装一到多个版本 pyenv install 3.9.6 3.5.2 
-### 设置全局版本 pyenv global 3.9.6
-### 设置本地版本 pyenv local 3.9.6 每当从此文件夹中调用时，都将使用给定的版本。
-### 使用 pip（取消）安装任何库或修改版本文件夹中的文件后，必须运行以使用 python 和库的可执行文件的新填充码更新 pyenv。pyenv rehash
-### 查看正在使用 pyenv version
-### 查看所有版本 pyenv versions
-### 安装相关依赖
-sudo apt install -y --no-install-recommends make build-essential libssl-dev zlib1g-dev libbz2-dev libreadline-dev libsqlite3-dev wget curl llvm libncurses5-dev xz-utils tk-dev libxml2-dev libxmlsec1-dev libffi-dev liblzma-dev
-### 安装pyenv
-git clone https://github.com/pyenv/pyenv.git ~/.pyenv
-
-
 ### docker
 sudo apt install -y docker.io
 ### 安装docker-compose
@@ -53,12 +39,31 @@ sudo git clone https://github.com/zsh-users/zsh-syntax-highlighting.git $ZSH_CUS
 ### 按需下载主题(需要配合客户端字体使用，达到最佳效果，见  linux/ubuntu-install.md)
 sudo git clone https://github.com/romkatv/powerlevel10k.git $ZSH_CUSTOM/themes/powerlevel10k
 
+
 ### 创建软链接，注意是否需要安装主题powerlevel10k
+
+#### 无主题
+sudo ln -s ~/dotfiles/zsh/zshrc-linux-default.conf ~/.zshrc
+
+#### 有主题powerlevel10k
 sudo ln -s ~/dotfiles/zsh/zshrc-linux.conf ~/.zshrc
 ### powerlevel10k配置文件，如果不需要这个主题，去掉zshrc-linux.conf 前7行和最后2行
 sudo ln -s ~/dotfiles/zsh/.p10k.zsh ~/.p10k.zsh
 
-### 激活配置
+## 安装pyenv , 默认目录 $HOME/.pyenv 会自动添加环境变量
+### 查看可安装版本 pyenv install -l
+### 安装一到多个版本 pyenv install 3.9.6 3.5.2 
+### 设置全局版本 pyenv global 3.9.6
+### 设置本地版本 pyenv local 3.9.6 每当从此文件夹中调用时，都将使用给定的版本。
+### 使用 pip（取消）安装任何库或修改版本文件夹中的文件后，必须运行以使用 python 和库的可执行文件的新填充码更新 pyenv。pyenv rehash
+### 查看正在使用 pyenv version
+### 查看所有版本 pyenv versions
+### 安装相关依赖
+sudo apt install -y --no-install-recommends make build-essential libssl-dev zlib1g-dev libbz2-dev libreadline-dev libsqlite3-dev wget curl llvm libncurses5-dev xz-utils tk-dev libxml2-dev libxmlsec1-dev libffi-dev liblzma-dev
+### 安装pyenv , 需要在zshrc中配置环境变量
+git clone https://github.com/pyenv/pyenv.git ~/.pyenv
+
+# 激活配置
 source ~/.zshrc
 
 # 非必要的：卸载所有自动安装且不再使用的软件包
