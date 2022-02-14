@@ -72,6 +72,12 @@ sudo chmod 777 ./linux/*-install.sh
 
 [字体字体安装教程](./../font/font.md)
 
+如需修改配置，执行：
+
+```sh
+p10k configure
+```
+
 ---
 
 ## 安装clash（非必须）
