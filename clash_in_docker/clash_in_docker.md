@@ -68,7 +68,7 @@ external-controller: "0.0.0.0:9090"
 2. 将 `config.yaml` 文件放在 `docker-compose.yaml` 文件同级目录下
 
 ```sh
-scp config.yaml root@<ip>:/opt/Clash/config.yaml
+$ scp config.yaml root@<ip>:/opt/Clash/config.yaml
 ```
  
 --- 
@@ -86,16 +86,27 @@ $ docker-compose stop
 
 - 写入 `~/.zshrc`
 
-```sh
-export https_proxy=http://127.0.0.1:7890
-export http_proxy=http://127.0.0.1:7890
-export all_proxy=socks5://127.0.0.1:7891
+```conf
+# 一键开启代理并显示当前ip
+proxy(){
+  export https_proxy=http://127.0.0.1:7890
+  export http_proxy=http://127.0.0.1:7890
+  export all_proxy=socks5://127.0.0.1:7891
+  curl https://ip.gs
+}
+# 一键关闭代理并显示当前ip
+unproxy(){
+  unset https_proxy
+  unset http_proxy
+  unset all_proxy
+  curl https://ip.gs
+}
 ```
 
 - 激活
 
 ```sh
-source ~/.zshrc
+$ source ~/.zshrc
 ```
 
 ### 网页控制

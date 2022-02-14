@@ -4,9 +4,9 @@
 
 ```sh
 # ubuntu
-sudo apt install -y tmux
+$ sudo apt install -y tmux
 # macOS
-brew intsall tmux
+$ brew intsall tmux
 ```
 
 ## 基本使用
@@ -22,7 +22,7 @@ Tmux绝大多数的快捷键都是以 `<Prefix>` 前缀开始的。
 在一个终端窗口输入tmux
 
 ```sh
-tmux
+$ tmux
 ```
 
 ### 面板Pane和窗口window和会话session
@@ -37,17 +37,40 @@ window可以理解为workspace，或者一个Desktop
 
 而所有的window都在一个session中，你可以同时打开多个session。
 
+---
+
+## 常用命令
+
+```sh
+#启动新session：
+$ tmux [new -s 会话名 -n 窗口名]
+
+#恢复session：
+$ tmux at [-t 会话名]
+
+#列出所有sessions：
+$ tmux ls
+
+#关闭session：
+$ tmux kill-session -t 会话名
+
+#关闭整个tmux服务器：
+$ tmux kill-server
+```
+
+---
+
 ## 配置文件
 
 ### 配置文件加载
-```
-cp xx.conf ~/.tmux.conf
+```sh
+$ cp xx.conf ~/.tmux.conf
 ```
 
 两种方式：
 
 - 重启 tmux `restart tmux`
--  在 tmux 窗口中，`<prefix>+:`，进入到命令模式后输入 `source-file ~/.tmux.conf`，回车后生效。
+- 在 tmux 窗口中，`<prefix>+:`，进入到命令模式后输入 `source-file ~/.tmux.conf`，回车后生效。
 
 ### 配置项
 
@@ -81,6 +104,7 @@ bind-key l select-pane -R # right
 bind-key C-l select-window -l
 ```
 `<prefix>+l`是切换面板，Ctrl+x Ctrl+l切换窗口，Ctrl+l清屏
+
 #### 支持鼠标
 ```sh
 # 老版本：

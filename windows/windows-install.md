@@ -21,13 +21,13 @@
 
 ```sh
 ## 下载
-curl.exe -L -o $HOME/Downloads/winget.msixbundle https://github.com/microsoft/winget-cli/releases/download/v1.2.10271/Microsoft.DesktopAppInstaller_8wekyb3d8bbwe.msixbundle
+$ curl.exe -L -o $HOME/Downloads/winget.msixbundle https://github.com/microsoft/winget-cli/releases/download/v1.2.10271/Microsoft.DesktopAppInstaller_8wekyb3d8bbwe.msixbundle
 
 ## 安装winget
-msiexec winget.msixbundle
+$ msiexec winget.msixbundle
 
 ## 查看版本
-winget -v
+$ winget -v
 ```
 
 ---
@@ -39,7 +39,7 @@ winget -v
 管理员身份运行powershell
 
 ```sh
-Set-ExecutionPolicy Bypass -Scope Process -Force; [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072; iex ((New-Object System.Net.WebClient).DownloadString('https://community.chocolatey.org/install.ps1'))
+$ Set-ExecutionPolicy Bypass -Scope Process -Force; [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072; iex ((New-Object System.Net.WebClient).DownloadString('https://community.chocolatey.org/install.ps1'))
 ```
 
 ---
@@ -52,7 +52,7 @@ Set-ExecutionPolicy Bypass -Scope Process -Force; [System.Net.ServicePointManage
   
 以管理员身份打开 PowerShell（`“开始”菜单` -> `PowerShell` -> `单击右键` -> `以管理员身份运行`）并运行：
 ```sh
-dism.exe /online /enable-feature /featurename:Microsoft-Windows-Subsystem-Linux /all /norestart
+$ dism.exe /online /enable-feature /featurename:Microsoft-Windows-Subsystem-Linux /all /norestart
 ```
 
 - 方式二：使用图形界面
@@ -70,7 +70,7 @@ dism.exe /online /enable-feature /featurename:Microsoft-Windows-Subsystem-Linux 
 以管理员身份打开 PowerShell 并运行：
 
 ```sh
-dism.exe /online /enable-feature /featurename:VirtualMachinePlatform /all /norestart
+$ dism.exe /online /enable-feature /featurename:VirtualMachinePlatform /all /norestart
 ```
 
 **重新启动计算机**，以完成 WSL 安装并更新到 WSL 2。
@@ -83,21 +83,21 @@ dism.exe /online /enable-feature /featurename:VirtualMachinePlatform /all /nores
   
 ```sh
 ## 使用PowerShell的WebClient下载
-$client = new-object System.Net.WebClient
-$client.DownloadFile('https://wslstorestorage.blob.core.windows.net/wslblob/wsl_update_x64.msi',$HOME+'\Downloads\wsl_update_x64.msi')
+$ $client = new-object System.Net.WebClient
+$ $client.DownloadFile('https://wslstorestorage.blob.core.windows.net/wslblob/wsl_update_x64.msi',$HOME+'\Downloads\wsl_update_x64.msi')
 
 ## curl下载
-curl.exe -L -o $HOME/Downloads/wsl_update_x64.msi https://wslstorestorage.blob.core.windows.net/wslblob/wsl_update_x64.msi
+$ curl.exe -L -o $HOME/Downloads/wsl_update_x64.msi https://wslstorestorage.blob.core.windows.net/wslblob/wsl_update_x64.msi
 ```
 
 - 安装
 ```sh
 ## 进入下载目录
-cd $HOME\Downloads
+$ cd $HOME\Downloads
 ## 安装
-msiexec /package wsl_update_x64.msi
+$ msiexec /package wsl_update_x64.msi
 ## 设置默认版本
-wsl --set-default-version 2
+$ wsl --set-default-version 2
 ```
 
 ### 步骤4 选择并安装linux
@@ -106,23 +106,23 @@ wsl --set-default-version 2
 
 ```sh
 # 查看可安装版本 wsl --list --online
-wsl -l -o
+$ wsl -l -o
 
 # 安装 ubuntu
 ## 下载完成之后，会要求配置初始的用户名和密码。
-wsl --install -d  Ubuntu
+$ wsl --install -d  Ubuntu
 
 # 升级成 wsl2
 ## WSL 2 是适用于 Linux 的 Windows 子系统体系结构的一个新版本，它支持适用于 Linux 的 Windows 子系统在 Windows 上运行 ELF64 Linux 二进制文件。 它的主要目标是提高文件系统性能，以及添加完全的系统调用兼容性
 ## 可以使用 wsl -l -v 查看是否需要更换wsl2 这可能是因为你在升级wsl2之前就已经安装了子系统
-wsl --set-version Ubuntu 2
+$ wsl --set-version Ubuntu 2
 ```
 ![wsl-l-v](./img/wsl-l-v.png)
 
 ### 步骤5 登录退出
 
 ```sh
-wsl
+$ wsl
 ```
 
 ![wsl-lo](./img/wsl-lo.png)

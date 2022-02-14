@@ -1,16 +1,69 @@
 # ranger
 
 - [ranger](#ranger)
+  - [官网](#官网)
   - [安装](#安装)
+  - [配置](#配置)
+  - [图片预览](#图片预览)
   - [快捷键](#快捷键)
+
+
+## 官网
+
+[https://github.com/ranger/ranger](https://github.com/ranger/ranger)
 
 ## 安装
 
+- apt 
+
+```sh
+## caca-utils：img2txt 图片
+## highlight：代码高亮
+## atool：存档高亮
+## w3m: html页面预览
+## mediainfo: 多媒体文件预览
+$ sudo apt install -y caca-utils highlight atool w3m mediainfo
+$ sudo apt install -y ranger
 ```
-## 图片预览
-pip install ueberzug
+
+-pip
+
+```sh
 ## ranger
-pip install ranger-fm
+$ pip install ranger-fm
+```
+
+## 配置
+
+使用 `ranger --copy-config=all` 将在 `~/.config/ranger` 中生成一系列配置文件，其中ranger主要有4个配置文件：
+
+- `rc.conf` 常用于设置选项和绑定快捷键.(最常用)
+- `scope.sh` 常用于设置文件的预览方式.
+- `rifle.conf` 常用于设置使用那个软件来打开文件.
+- `commands.py` python文件,增强和改进ranger的各种功能.
+
+> 禁用默认配置
+
+```conf
+export RANGER_LOAD_DEFAULT_RC=FALSE
+```
+
+## 图片预览
+
+安装 [ueberzug](https://github.com/seebye/ueberzug)
+
+```sh
+sudo apt install -y libx11-dev libxext-dev
+## 需提前安装相关依赖
+$ pip install ueberzug
+```
+
+修改配置文件`~/.config/ranger/rc.conf`
+
+```conf
+set preview_images true
+set preview_images_method ueberzug
+set draw_borders true
 ```
 
 ## 快捷键
