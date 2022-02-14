@@ -1,23 +1,33 @@
 # clash in docker
 
 - [clash in docker](#clash-in-docker)
+  - [介绍](#介绍)
   - [配置文件](#配置文件)
     - [docker-compose.yaml](#docker-composeyaml)
     - [config.yaml](#configyaml)
   - [使用](#使用)
     - [启动与关闭clash](#启动与关闭clash)
-    - [终端配置http_proxy](#终端配置http_proxy)
+    - [自定义一键启动、关闭代理命令](#自定义一键启动关闭代理命令)
     - [网页控制](#网页控制)
+
+## 介绍
+
+本文采用`docker-compose`部署，并配置了一键开启关闭命令 `proxy` 和 `unproxy`
+
+> 其他方式请看[官方文档](https://github.com/Dreamacro/clash/wiki/clash-as-a-daemon#docker)
+
+---
 
 ## 配置文件
 
 ### docker-compose.yaml
 
 ```sh
-cp clash_in_docker/docker-compose.yaml /opt/Clash/docker-compose.yaml
+## 复制配置文件
+$ cp clash_in_docker/docker-compose.yaml /opt/Clash/docker-compose.yaml
 ```
 
-> 其他方式请看[官方文档](https://github.com/Dreamacro/clash/wiki/clash-as-a-daemon#docker)
+`docker-compose.yaml` 内容如下：
 
 ```yaml
 version: '3'
@@ -78,11 +88,13 @@ $ scp config.yaml root@<ip>:/opt/Clash/config.yaml
 ### 启动与关闭clash
 
 ```sh
+## 启动
 $ docker-compose up -d
+## 关闭
 $ docker-compose stop
 ```
 
-### 终端配置http_proxy
+### 自定义一键启动、关闭代理命令
 
 - 写入 `~/.zshrc`
 

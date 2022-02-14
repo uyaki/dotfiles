@@ -117,6 +117,8 @@ bind-key C-l select-window -l
 set-option -g mouse on
 ```
 
+---
+
 ## 快捷键
 
 ### 系统指令

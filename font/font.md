@@ -12,7 +12,9 @@
 
 ## 资源库
 
-官网[ryanoasis/nerd-fonts](https://github.com/ryanoasis/nerd-fonts)
+官网：[ryanoasis/nerd-fonts](https://github.com/ryanoasis/nerd-fonts)
+
+---
 
 ## 字体安装
 
@@ -40,7 +42,8 @@ fc-list | grep "Hack"
 
 ### windows
 
-> 默认工作目录 ~/Downloads/nerd-fonts
+> 默认工作目录 `~/Downloads/nerd-fonts`
+> 字体存放目录 `~/Downloads/nerd-fonts/patched-fonts/<字体名文件夹>`
 
 ```sh
 ## 下载字体
@@ -62,17 +65,17 @@ curl.exe -L -o $HOME/Downloads/nerd-fonts/install.ps1 https://raw.githubusercont
 ```
 
 > Could not resolve host: raw.githubusercontent.com
-> 通过https://www.ipaddress.com/查询真实地址，如185.199.108.133，
+> 通过 [https://www.ipaddress.com/](https://www.ipaddress.com/) 查询真实地址，如185.199.108.133，
 > - 添加到/etc/hosts
 > - 或者临时使用路径185.199.108.133/ryanoasis/nerd-fonts/master/install.ps1下载
 
+---
 
 ## 在终端使用
 ### iterm2 配置方式
 
-`iTerm -> Preferences -> Profiles -> Text -> font` -> 修改成 Hack Nerd Font
+`iTerm` -> `Preferences` -> `Profiles` -> `Text` -> `font` -> `Hack Nerd Font`
 
 ### windows Terminal 配置方式
 
-- `设置` -> `配置文件` -> 选中具体配置文件 -> `外观` -> `配色方案` -> `Solarized Light`
 - `设置` -> `配置文件` -> 选中具体配置文件 -> `外观` -> `字体` -> `Hack Nerd Font`

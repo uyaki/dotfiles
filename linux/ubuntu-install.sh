@@ -52,14 +52,14 @@ sudo ln -s ~/dotfiles/zsh/.p10k.zsh ~/.p10k.zsh
 
 ## 安装pyenv , 默认目录 $HOME/.pyenv 会自动添加环境变量
 ### 查看可安装版本 pyenv install -l
-### 安装一到多个版本 pyenv install 3.10.2 3.5.2 
+### 安装 pyenv install 3.10.2 2.7.18
 ### 设置全局版本 pyenv global 3.10.2
 ### 设置本地版本 pyenv local 3.10.2 每当从此文件夹中调用时，都将使用给定的版本。
 ### 使用 pip（取消）安装任何库或修改版本文件夹中的文件后，必须运行以使用 python 和库的可执行文件的新填充码更新 pyenv。pyenv rehash
 ### 查看正在使用 pyenv version
 ### 查看所有版本 pyenv versions
 ### 安装相关依赖
-sudo apt install -y --no-install-recommends make build-essential libssl-dev zlib1g-dev libbz2-dev libreadline-dev libsqlite3-dev wget curl llvm libncurses5-dev xz-utils tk-dev libxml2-dev libxmlsec1-dev libffi-dev liblzma-dev
+sudo apt install -y --no-install-recommends make build-essential libssl-dev zlib1g-dev libbz2-dev libreadline-dev libsqlite3-dev  llvm libncurses5-dev xz-utils tk-dev libxml2-dev libxmlsec1-dev liblzma-dev python-dev libffi-dev python3-dev python3.x-dev
 ### 安装pyenv , 需要在zshrc中配置环境变量
 git clone https://github.com/pyenv/pyenv.git ~/.pyenv
 

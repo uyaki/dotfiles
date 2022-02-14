@@ -17,7 +17,7 @@
 
 ## winget 安装
 
-请到[winget官方github](https://github.com/microsoft/winget-cli/releases)查看最新可下载版本
+请到 [winget官方](https://github.com/microsoft/winget-cli/releases) 查看最新可下载版本
 
 ```sh
 ## 下载

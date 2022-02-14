@@ -26,7 +26,7 @@ $ sudo apt install -y caca-utils highlight atool w3m mediainfo
 $ sudo apt install -y ranger
 ```
 
--pip
+- pip
 
 ```sh
 ## ranger
@@ -35,14 +35,20 @@ $ pip install ranger-fm
 
 ## 配置
 
-使用 `ranger --copy-config=all` 将在 `~/.config/ranger` 中生成一系列配置文件，其中ranger主要有4个配置文件：
+- 生成配置文件
+  
+```sh
+$ ranger --copy-config=all
+```
+
+将在 `~/.config/ranger` 中生成一系列配置文件，其中ranger主要有4个配置文件：
 
 - `rc.conf` 常用于设置选项和绑定快捷键.(最常用)
 - `scope.sh` 常用于设置文件的预览方式.
 - `rifle.conf` 常用于设置使用那个软件来打开文件.
 - `commands.py` python文件,增强和改进ranger的各种功能.
 
-> 禁用默认配置
+- 禁用默认配置
 
 ```sh
 export RANGER_LOAD_DEFAULT_RC=FALSE
@@ -53,8 +59,8 @@ export RANGER_LOAD_DEFAULT_RC=FALSE
 安装 [ueberzug](https://github.com/seebye/ueberzug)
 
 ```sh
-sudo apt install -y libx11-dev libxext-dev
 ## 需提前安装相关依赖
+$ sudo apt install -y libx11-dev libxext-dev
 $ pip install ueberzug
 ```
 
@@ -70,7 +76,7 @@ set draw_borders true
 
 |快捷键|功能|
 |:---:|:---|
-|📕|📖 **全局快捷键**|
+|📖 **全局快捷键**||
 |`q`|退出ranger|
 |`esc`|退出当前指令界面|
 |`r`|进入可选操作菜单|
@@ -80,7 +86,7 @@ set draw_borders true
 |`shift + s`|退出ranger并进入当前文件夹|
 |`y`|查看 `y`+`<key>`组合键实现`复制`|
 |`z`+`h` / `Backspace`|快速切换是否`显示隐藏文件`|
-|📕|📖 **光标快捷键**|
+|📖 **光标快捷键**||
 |`h`|返回上级文件夹|
 |`l`|进入下级文件夹|
 |`j`|当前文件夹向`下`移动光标|
