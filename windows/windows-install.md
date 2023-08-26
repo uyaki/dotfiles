@@ -65,46 +65,7 @@ $ dism.exe /online /enable-feature /featurename:Microsoft-Windows-Subsystem-Linu
 
 重启电脑
 
-### 步骤2 启用虚拟机功能
-
-安装 WSL 2 之前，必须启用“虚拟机平台”可选功能。 
-
-计算机需要虚拟化功能才能使用此功能。
-
-以管理员身份打开 PowerShell 并运行：
-
-```sh
-$ dism.exe /online /enable-feature /featurename:VirtualMachinePlatform /all /norestart
-```
-
-**重新启动计算机**，以完成 WSL 安装并更新到 WSL 2。
-
-### 步骤3 下载 Linux 内核更新包
-
-> 步骤2后**重新启动计算机**后才可以设置wsl2
-
-- 下载
-  
-```sh
-## 使用PowerShell的WebClient下载
-$ $client = new-object System.Net.WebClient
-$ $client.DownloadFile('https://wslstorestorage.blob.core.windows.net/wslblob/wsl_update_x64.msi',$HOME+'\Downloads\wsl_update_x64.msi')
-
-## curl下载
-$ curl.exe -L -o $HOME/Downloads/wsl_update_x64.msi https://wslstorestorage.blob.core.windows.net/wslblob/wsl_update_x64.msi
-```
-
-- 安装
-```sh
-## 进入下载目录
-$ cd $HOME\Downloads
-## 安装
-$ msiexec /package wsl_update_x64.msi
-## 设置默认版本
-$ wsl --set-default-version 2
-```
-
-### 步骤4 选择并安装linux
+### 步骤2 选择并安装linux
 
 > [wsl官方文档](https://docs.microsoft.com/zh-cn/windows/wsl/install)
 
@@ -123,7 +84,7 @@ $ wsl --set-version Ubuntu 2
 ```
 ![wsl-l-v](./img/wsl-l-v.png)
 
-### 步骤5 登录退出
+### 步骤3 登录退出
 
 ```sh
 $ wsl
