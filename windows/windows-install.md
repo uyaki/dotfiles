@@ -36,13 +36,14 @@ $ winget -v
 
 > chocolatey [官网安装docs](https://docs.chocolatey.org/en-us/choco/setup)
 
-管理员身份运行powershell
+以管理员身份运行powershell
 
 ```sh
 $ Set-ExecutionPolicy Bypass -Scope Process -Force; [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072; iex ((New-Object System.Net.WebClient).DownloadString('https://community.chocolatey.org/install.ps1'))
 ```
 
-如果中间因为网络等原因出现问题，第一次安装失败，只需删除`C:\ProgramData\chocolatey` 目录，再次执行安装命令即可
+> 如果中间因为网络等原因出现问题，第一次安装失败，只需删除`C:\ProgramData\chocolatey` 目录，再次执行安装命令即可
+
 ---
 
 ## 安裝wsl
