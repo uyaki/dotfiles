@@ -34,7 +34,7 @@ $ winget -v
 
 ## chocolatey 安装
 
-> chocolatey [官网](https://chocolatey.org/install#individual)
+> chocolatey [官网安装docs](https://docs.chocolatey.org/en-us/choco/setup)
 
 管理员身份运行powershell
 
@@ -42,6 +42,7 @@ $ winget -v
 $ Set-ExecutionPolicy Bypass -Scope Process -Force; [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072; iex ((New-Object System.Net.WebClient).DownloadString('https://community.chocolatey.org/install.ps1'))
 ```
 
+如果中间因为网络等原因出现问题，第一次安装失败，只需删除`C:\ProgramData\chocolatey` 目录，再次执行安装命令即可
 ---
 
 ## 安裝wsl
@@ -60,6 +61,8 @@ $ dism.exe /online /enable-feature /featurename:Microsoft-Windows-Subsystem-Linu
 具体操作路径：`控制面板` -> `所有控制面板项` -> `程序和功能` -> `启用或关闭Windows功能` -> 勾选✔️`适用于Linux的Windows子系统。`
 
 ![](img/wsl.png)
+
+重启电脑
 
 ### 步骤2 启用虚拟机功能
 
