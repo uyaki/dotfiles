@@ -92,6 +92,43 @@ $ wsl
 
 ![wsl-lo](./img/wsl-lo.png)
 
+### 用户相关
+
+1. 创建用户目录
+> 登录到 root 用户．假如你之前没有设置过 root 用户，那么你就通过以下命令更改密码：
+> ```
+> sudo passwd root
+> ```
+
+2. 登录root 
+```
+su root
+```
+
+3. 创建新用户
+```
+# -r：建立系统账号
+# -m：自动建立用户的登入目录
+# -s：指定用户登入后所使用的 shell
+sudo useradd -r -m -s /bin/bash uyaki
+
+# 在 Ubuntu18.04 中，不会在创建用户的时候自动提示设置密码。需要手动执行：
+sudo passwd uyaki
+```
+
+4. 修改用户权限
+
+> 采用修改 / etc/sudoers 文件的方法分配用户权限。因为此文件只有 r 权限，在改动前需要增加 w 权限，改动后，再去掉 w 权限
+
+```
+sudo chmod +w /etc/sudoers
+sudo vim /etc/sudoers
+# 添加下图的配置语句，并且保存修改
+sudo chmod -w /etc/sudoers
+```
+
+![](https://cdn.jsdelivr.net/gh/uyaki/pic-cloud/img/202308261959053.png)
+
 之后的操作见 [ubuntu-install.md](../linux/ubuntu-install.md)
 
 ---
